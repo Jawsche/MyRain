@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
+    <Compile Include="Assets\Scripts\TopChucnk.cs" />
     <None Include="Assets\Note about Editor Folder.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/GitHub/MyRain/MyRain/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
