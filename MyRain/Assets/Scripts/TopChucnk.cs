@@ -19,7 +19,8 @@ public class TopChucnk : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.eulerAngles = new Vector2(Mathf.Lerp(transform.eulerAngles.x, parentNode.localEulerAngles.x, Time.deltaTime * returnSpeed), Mathf.Lerp(transform.eulerAngles.y, parentNode.localEulerAngles.y, Time.deltaTime * returnSpeed));
+        //transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, parentNode.eulerAngles, Time.deltaTime * returnSpeed/10);
+        //transform.eulerAngles = new Vector2(Mathf.Lerp(transform.eulerAngles.x, parentNode.eulerAngles.x, Time.deltaTime * returnSpeed), Mathf.Lerp(transform.eulerAngles.y, parentNode.eulerAngles.y, Time.deltaTime * returnSpeed));
         transform.position = new Vector2(Mathf.Lerp(transform.position.x, parentNode.position.x + relativeOffset.x, Time.deltaTime * returnSpeed), Mathf.Lerp(transform.position.y, parentNode.position.y + relativeOffset.y, Time.deltaTime * returnSpeed));
     }
 }

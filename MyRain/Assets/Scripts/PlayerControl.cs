@@ -88,7 +88,7 @@ public class PlayerControl : MonoBehaviour {
             tempY = topChunck.relativeOffset.x;
             topChunck.relativeOffset = new Vector2(tempX, tempY);
             if (p_facingDir == 1.0f)
-                transform.eulerAngles = new Vector3(0.0f, 0.0f, -90.0f);
+                transform.eulerAngles = Vector3.Lerp(transform.eulerAngles,  new Vector3(0.0f, 0.0f, -90.0f), 1);
             else if (p_facingDir == -1.0f)
                 transform.eulerAngles = new Vector3(0.0f, 0.0f, 90.0f);
             a_maxSpeed *= 0.7f;
