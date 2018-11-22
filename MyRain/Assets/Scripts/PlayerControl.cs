@@ -61,9 +61,11 @@ public class PlayerControl : MonoBehaviour {
         if (h != 0)// && p_grounded)
         {
             p_rb.velocity = new Vector2(h * a_maxSpeed, p_rb.velocity.y);
-            p_isWalking = true;
+            if(p_grounded)
+                p_isWalking = true;
+            else p_isWalking = false;
         }
-        else p_isWalking = false;
+        
 
         if (h < 0.0f)
             p_facingDir = -1.0f;
@@ -82,11 +84,11 @@ public class PlayerControl : MonoBehaviour {
         if (CrossPlatformInputManager.GetButtonDown("Fire1") && p_standing == true)
         {
             p_standing = false;
-            float tempX;
-            float tempY;
-            tempX = topChunck.relativeOffset.y * p_facingDir;
-            tempY = topChunck.relativeOffset.x;
-            topChunck.relativeOffset = new Vector2(tempX, tempY);
+            //float tempX;
+            //float tempY;
+            //tempX = topChunck.relativeOffset.y * p_facingDir;
+            //tempY = topChunck.relativeOffset.x;
+            //topChunck.relativeOffset = new Vector2(tempX, tempY);
             if (p_facingDir == 1.0f)
                 transform.eulerAngles = Vector3.Lerp(transform.eulerAngles,  new Vector3(0.0f, 0.0f, -90.0f), 1);
             else if (p_facingDir == -1.0f)
@@ -97,7 +99,7 @@ public class PlayerControl : MonoBehaviour {
         else if (CrossPlatformInputManager.GetButtonDown("Fire1") && p_standing == false)
         {
             p_standing = true;
-            topChunck.relativeOffset = topChunck.relativeOffsetInit;
+            //topChunck.relativeOffset = topChunck.relativeOffsetInit;
             if (p_facingDir == 1.0f)
                 transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
             else if (p_facingDir == -1.0f)
@@ -108,11 +110,11 @@ public class PlayerControl : MonoBehaviour {
     private void CheckGrounded()
     {
         //Set Grounded variable
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1.1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 0.6f);
         if (hit.collider != null)
         {
             p_grounded = true;
-            Debug.DrawRay(transform.position, Vector3.down * 1.1f, Color.red);
+            Debug.DrawRay(transform.position, Vector3.down * 0.6f, Color.red);
             //Debug.Log(hit.collider.name);
         }
         else

@@ -309,8 +309,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.6936
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -446,7 +446,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0.5
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -847,15 +847,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1099845435}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afed429088f49944bac39fda61fbb9f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentNode: {fileID: 457724727}
-  relativeOffset: {x: 0, y: 1}
-  relativeOffsetInit: {x: 0, y: 0}
+  targetVector: {x: 0, y: 1}
+  currentVector: {x: 0, y: 0}
   returnSpeed: 100
+  returnTorque: 25
+  theHinge: {fileID: 0}
+  angle: 0
 --- !u!61 &1099845438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1475,7 +1478,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 13ff452dc904e3f4d9411334d3c6a43d, type: 2}
+  - {fileID: 2100000, guid: b0dfeae4bb092854fbe0a0e3b6a6a0c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
